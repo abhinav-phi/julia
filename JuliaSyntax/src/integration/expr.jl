@@ -675,6 +675,9 @@ end
     return retexpr
 end
 
+"""
+    build_tree(::Type{Expr}, stream::ParseStream; kws...)
+"""
 function build_tree(::Type{Expr}, stream::ParseStream;
                     filename=nothing, first_line=1,
                     # unused, but required since `_parse` is written generic
@@ -683,6 +686,9 @@ function build_tree(::Type{Expr}, stream::ParseStream;
     return build_tree(Expr, stream, source)
 end
 
+"""
+    build_tree(::Type{Expr}, stream::ParseStream, source::SourceFile)
+"""
 function build_tree(::Type{Expr}, stream::ParseStream, source::SourceFile)
     txtbuf = unsafe_textbuf(stream)
     cursor = RedTreeCursor(stream)

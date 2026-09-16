@@ -878,6 +878,9 @@ end
 #-------------------------------------------------------------------------------
 # RawGreenNode->SyntaxTree1
 
+"""
+    build_tree(::Type{SyntaxTree}, stream::ParseStream; kws...)
+"""
 function build_tree(::Type{SyntaxTree}, stream::ParseStream;
                     filename=nothing, first_line=1)
     cursor = RedTreeCursor(stream)

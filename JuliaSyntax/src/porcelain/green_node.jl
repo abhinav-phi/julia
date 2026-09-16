@@ -151,6 +151,9 @@ function GreenNode(cursor::GreenTreeCursor)
     end
 end
 
+"""
+    build_tree(::Type{GreenNode}, stream::ParseStream; kws...)
+"""
 function build_tree(::Type{GreenNode}, stream::ParseStream;
                     # unused, but required since `_parse` is written generically
                     filename=nothing, first_line=1, keep_parens=false)

@@ -305,6 +305,9 @@ end
 # shallow-copy the data
 Base.copy(data::SyntaxData) = SyntaxData(data.source, data.raw, data.byte_end, data.val)
 
+"""
+    build_tree(::Type{SyntaxNode}, stream::ParseStream; kws...)
+"""
 function build_tree(::Type{SyntaxNode}, stream::ParseStream;
                     filename=nothing, first_line=1, keep_parens=false)
     source = SourceFile(stream, filename=filename, first_line=first_line)
